@@ -10,11 +10,11 @@ using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
 using VH.Engine.World.Beings.AI;
 
-namespace MyRoguelike.Game.Beings.Ai {
-    public class MyPcAi : BaseAi {
+namespace Sparc.Game.Beings.Ai {
+    public class SparcPcAi : BaseAi {
 
         #region constructors
-        public MyPcAi(Pc pc) : base(pc) { }
+        public SparcPcAi(Pc pc) : base(pc) { }
 
         #endregion
 
@@ -22,7 +22,7 @@ namespace MyRoguelike.Game.Beings.Ai {
 
         public override AbstractAction SelectAction() {
             Pc pc = (Pc)Being;
-            string command = ((MyGameController)GameController.Instance).Command;
+            string command = ((SparcGameController)GameController.Instance).Command;
             AbstractAction action = null;
             //
             if (command == "wait") action = new WaitAction(pc);

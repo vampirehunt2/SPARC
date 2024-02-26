@@ -9,10 +9,10 @@ using VH.Engine.Game;
 
 namespace VH.Game.World.Items {
 
-    public class MyItemGenerator : AbstractItemGenerator {
+    public class SparcItemGenerator : AbstractItemGenerator {
 
 
-        public MyItemGenerator(ItemFacade facade) : base(facade) { }
+        public SparcItemGenerator(ItemFacade facade) : base(facade) { }
 
         public override void Generate(Level level) {
             level.Items.Clear();

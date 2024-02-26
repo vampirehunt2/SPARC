@@ -1,6 +1,6 @@
-﻿using MyRoguelike.Game.Beings;
-using MyRoguelike.Game.Beings.Actions;
-using MyRoguelike.Game.Beings.Ai;
+﻿using Sparc.Game.Beings;
+using Sparc.Game.Beings.Actions;
+using Sparc.Game.Beings.Ai;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +20,8 @@ using VH.Engine.World.Items;
 using VH.Game.World.Beings;
 using VH.Game.World.Items;
 
-namespace MyRoguelike.Game {
-    public class MyGameController : GameController {
+namespace Sparc.Game {
+    public class SparcGameController : GameController {
 
 
         protected Keybindings keybindings = Keybindings.Instance;
@@ -76,7 +76,7 @@ namespace MyRoguelike.Game {
         }
 
         protected override void runBaseAction(Being performer) {
-            new MyAction(performer).Perform();
+            new SparcAction(performer).Perform();
         }
 
         protected override void setUpGame() {
@@ -93,9 +93,9 @@ namespace MyRoguelike.Game {
             console.GoTo(0, 0);
 
             // intialise the PC
-            pc = new MyPc();
+            pc = new SparcPc();
             pc.Character = '@';
-            pc.Ai = new MyPcAi(pc);
+            pc.Ai = new SparcPcAi(pc);
 
             // you can add a splash screen here
             //
@@ -106,7 +106,7 @@ namespace MyRoguelike.Game {
             // initialise the generators
             // itemGenerator = new ItemGenerator(new ItemFacade());
             monsterGenerator = new MonsterGenerator();
-            itemGenerator = new MyItemGenerator(new ItemFacade());
+            itemGenerator = new SparcItemGenerator(new ItemFacade());
 
             // init the viewport
             viewPort = new ViewPort(1, 1, 48, 48, console, new Position(0, 0));

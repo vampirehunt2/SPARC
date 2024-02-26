@@ -59,11 +59,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game\Beings\Actions\MyAction.cs" />
-    <Compile Include="Game\Beings\Ai\MyPcAi.cs" />
-    <Compile Include="Game\Beings\MyPc.cs" />
-    <Compile Include="Game\Items\MyItemGenerator.cs" />
-    <Compile Include="Game\MyGameController.cs" />
+    <Compile Include="Game\Beings\Actions\SparcAction.cs" />
+    <Compile Include="Game\Beings\Ai\SparcPcAi.cs" />
+    <Compile Include="Game\Beings\SparcPc.cs" />
+    <Compile Include="Game\Items\SparcItemGenerator.cs" />
+    <Compile Include="Game\SparcGameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -6,7 +6,7 @@ using VH.Engine.Levels;
 using VH.Game;
 using VH.Engine.Game;
 using System.Windows.Forms;
-using MyRoguelike.Game;
+using Sparc.Game;
 
 namespace VH2 {
 
@@ -14,7 +14,7 @@ namespace VH2 {
 
         [STAThread]
         static void Main(string[] args) {
-            GameController.Instance = new MyGameController();
+            GameController.Instance = new SparcGameController();
             try {
                 GameController.Instance.Play();
             } catch (Exception ex) {

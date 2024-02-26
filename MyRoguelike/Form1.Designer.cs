@@ -1,4 +1,4 @@
-﻿namespace MyRoguelike {
+﻿namespace Sparc {
     partial class Form1 {
         /// <summary>
         /// Required designer variable.

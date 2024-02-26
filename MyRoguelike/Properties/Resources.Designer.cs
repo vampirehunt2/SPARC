@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyRoguelike.Properties {
+namespace Sparc.Properties {
     using System;
     
     

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using VH.Engine.Translations;
 using VH.Engine.World.Beings;
 
-namespace MyRoguelike.Game.Beings {
-    public class MyPc : Pc {
+namespace Sparc.Game.Beings {
+    public class SparcPc : Pc {
 
-        public MyPc(): base() {
+        public SparcPc(): base() {
             identity = Accusativ = Translator.Instance["you"];
         }
 
