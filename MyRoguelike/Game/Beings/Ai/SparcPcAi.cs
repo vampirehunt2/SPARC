@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPARC.Game.Beings.Actions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,14 +28,14 @@ namespace Sparc.Game.Beings.Ai {
             //
             if (command == "wait") action = new WaitAction(pc);
             //
-            else if (command == "north") action = new MoveAction(pc, Step.NORTH);
-            else if (command == "south") action = new MoveAction(pc, Step.SOUTH);
-            else if (command == "east") action = new MoveAction(pc, Step.EAST);
-            else if (command == "west") action = new MoveAction(pc, Step.WEST);
-            else if (command == "north-east") action = new MoveAction(pc, Step.NORTH_EAST);
-            else if (command == "north-west") action = new MoveAction(pc, Step.NORTH_WEST);
-            else if (command == "south-east") action = new MoveAction(pc, Step.SOUTH_EAST);
-            else if (command == "south-west") action = new MoveAction(pc, Step.SOUTH_WEST);
+            else if (command == "north") action = new SparcMoveAction(pc, Step.NORTH);
+            else if (command == "south") action = new SparcMoveAction(pc, Step.SOUTH);
+            else if (command == "east") action = new SparcMoveAction(pc, Step.EAST);
+            else if (command == "west") action = new SparcMoveAction(pc, Step.WEST);
+            else if (command == "north-east") action = new SparcMoveAction(pc, Step.NORTH_EAST);
+            else if (command == "north-west") action = new SparcMoveAction(pc, Step.NORTH_WEST);
+            else if (command == "south-east") action = new SparcMoveAction(pc, Step.SOUTH_EAST);
+            else if (command == "south-west") action = new SparcMoveAction(pc, Step.SOUTH_WEST);
             else if (command == "take-stairs") action = new TakeStairsAction(pc);
             else if (command == "close-door") action = new CloseDoorAction(pc);
 

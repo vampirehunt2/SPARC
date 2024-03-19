@@ -1,20 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <levels
-  root="Root Level"
-  default-width="48"
-  default-height="48"
+  root="L0"
+  default-width="40"
+  default-height="40"
   default-generator="dungeon"
 >
 	<generator name="dungeon" type="VH.Engine.Levels.DungeonMapGenerator" assembly="VH.Engine.dll"/>
-	<!-- declare other generators here -->
+	<generator name="spaceship" type="SPARC.Levels.SpaceshipMapGenerator" assembly="SPARC.exe" />
 
-	<level name="Root Level" persistent="false" bidirectional="false" generator="dungeon" danger="0"/>
-	<level name="Second Level" persistent="false" bidirectional="false" generator="dungeon" danger="5"/>
-	<!-- add other levels below -->
 
-	<connection parent="Root Level" child="Second Level"/>
-	<!-- connect your levels here -->
+	<level name="L0" persistent="false" bidirectional="false" generator="spaceship" width="40" height="40" danger="0"/>
+	<level name="L1" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="0"/>
+	<level name="L2" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="1"/>
+	<level name="L3" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="1"/>
+	<level name="L4" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="1"/>
+	<level name="L5" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="2"/>
+	<level name="L6" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="2"/>
+	<level name="L7" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="2"/>
+	<level name="L8" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="3"/>
+	<level name="L9" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="3"/>
+	<level name="L10" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="3"/>
+	<level name="L11" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="4"/>
+	<level name="L12" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="4"/>
+	<level name="L13" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="4"/>
+	<level name="L14" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="5"/>
+	<level name="L15" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="5"/>
+	<level name="L16" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="5"/>
+	<level name="L17" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="6"/>
+	<level name="L18" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="6"/>
+	<level name="L19" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="6"/>
+	<level name="L20" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="7"/>
+	<level name="L21" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="7"/>
+	<level name="L22" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="7"/>
+	<level name="L23" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="8"/>
+	<level name="L24" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="8"/>
+	<level name="L25" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="9"/>
 
+	<connection parent="L0" child="L1"/>
+	<connection parent="L1" child="L2"/>
+	<connection parent="L2" child="L3"/>
+	<connection parent="L3" child="L4"/>
+	<connection parent="L4" child="L5"/>
+	<connection parent="L5" child="L6"/>
+	<connection parent="L6" child="L7"/>
+	<connection parent="L7" child="L8"/>
+	<connection parent="L8" child="L9"/>
+	<connection parent="L9" child="L10"/>
+	<connection parent="L10" child="L11"/>
+	<connection parent="L11" child="L12"/>
+	<connection parent="L12" child="L13"/>
+	<connection parent="L13" child="L14"/>
+	<connection parent="L14" child="L15"/>
+	<connection parent="L15" child="L16"/>
+	<connection parent="L16" child="L17"/>
+	<connection parent="L17" child="L18"/>
+	<connection parent="L18" child="L19"/>
+	<connection parent="L19" child="L20"/>
+	<connection parent="L20" child="L21"/>
+	<connection parent="L21" child="L22"/>
+	<connection parent="L22" child="L23"/>
+	<connection parent="L23" child="L24"/>
+	<connection parent="L24" child="L25"/>
 
 </levels>
 

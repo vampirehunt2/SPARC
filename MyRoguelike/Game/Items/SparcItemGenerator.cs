@@ -29,7 +29,9 @@ namespace VH.Game.World.Items {
         }
 
         private bool isValidPosition(Position position, Level level) {
-            return GameController.Instance.ViewPort.GetDisplayCharacter(level.Map[position]) == Terrain.Get("ground").Character;
+            ViewPort viewPort = GameController.Instance.ViewPort;
+            char mapChar = viewPort.GetDisplayCharacter(level.Map[position]);
+            return  mapChar == Terrain.Get("ground").Character;
         }
     }
 }

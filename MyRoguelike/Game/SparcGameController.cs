@@ -1,6 +1,8 @@
-﻿using Sparc.Game.Beings;
+﻿using MyRoguelike.Display;
+using Sparc.Game.Beings;
 using Sparc.Game.Beings.Actions;
 using Sparc.Game.Beings.Ai;
+using SPARC.Display;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +50,6 @@ namespace Sparc.Game {
             // in-game actions. 
             // these are actions performed by the pc.
             action = pc.Ai.SelectAction();
-
             // perform selected pc action, if there is one.
             if (action != null && action.Perform()) {
                 gametimeTicks = (int)(action.TimeNeeded / pc.Speed);
@@ -84,8 +85,8 @@ namespace Sparc.Game {
             console = new VhConsole();  // this type is a fullscreen console
             console.ForegroundColor = ConsoleColor.Blue;
             fieldOfVision = new HardcodedShadowcastingFieldOfVision(); // this is a simple LoS implementation with a maximum range of 2 tiles
-            messageWindow = new ScrollingVerticalMessageWindow(50, 1, 28, 48, console);
-            messageManager = new MessageManager(messageWindow);
+            messageWindow = new SparcMessageWindow(41, 1, 38, 48, console);
+            messageManager = new SparcMessageManager(messageWindow);
             console.CursorVisible = false;
             console.Height = 50;
             console.Width = 80;
@@ -109,7 +110,8 @@ namespace Sparc.Game {
             itemGenerator = new SparcItemGenerator(new ItemFacade());
 
             // init the viewport
-            viewPort = new ViewPort(1, 1, 48, 48, console, new Position(0, 0));
+            viewPort = new ViewPort(1, 1, 40, 40, console, new Position(0, 0));
+            viewPort.Shade = false;
 
             // set up the level structure
             Level = new LevelGenerator().CreateLevelStructure();

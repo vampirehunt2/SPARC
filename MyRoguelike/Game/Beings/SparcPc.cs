@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using VH.Engine.Translations;
 using VH.Engine.World.Beings;
+using VH.Engine.World.Items;
 
 namespace Sparc.Game.Beings {
-    public class SparcPc : Pc {
+    public class SparcPc : Pc, IEquipmentBeing {
 
         public SparcPc(): base() {
             identity = Accusativ = Translator.Instance["you"];
@@ -37,6 +38,13 @@ namespace Sparc.Game.Beings {
         public override void Move() {
         }
 
+        public override bool CanWalkOn(char c) {
+            if (c == '&' || c == '\'') return true;
+            return base.CanWalkOn(c);
+        }
+
         public override string Name { get => base.Name; set => base.Name = value; }
+
+        public Equipment Equipment => throw new NotImplementedException();
     }
 }

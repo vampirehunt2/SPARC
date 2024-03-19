@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <messages>
-	<message key="open-door" person2="% open the door" person3="The % opens the door" />
-	<message key="go-down" person2="% go down the stairs" person3="The % goes down the stairs" />
-	<message key="hit-wall" person2="Boink!" person3="Boink!"/>
-	<message key="attack" person2="% hit the %" person3="The % hits %" />
-	<message key="miss" person2="% miss the %" person3="The % misses %" />
-	<message key="killed" person2="% are dead!" person3="The % is dead!"/>
-	<message key="stuck-door" person2="The door is stuck!" person3="The % tries to open the door, but the door is stuck" />
+	<message key="open-door" person2="% opens the door" person3="The % opens the door" person2level="info" person3level="info"/>
+	<message key="go-down" person2="% goes down the elevator" person3="The % goes down the elevator" person2level="info" person3level="info"/>
+	<message key="hit-wall" person2="Boink!" person3="Boink!" person2level="warn" person3level="info"/>
+	<message key="attack" person2="% hits the %" person3="The % hits %" person2level="info" person3level="warn"/>
+	<message key="miss" person2="% misses the %" person3="The % misses %" person2level="warn" person3level="info"/>
+	<message key="killed" person2="% is dead!" person3="The % is dead!" person2level="crit" person3level="info"/>
+	<message key="stuck-door" person2="Door stuck" person3="The % tries to open the door, but the door is stuck" person2level="warn" person3level="info"/>
+	<message key="pass-elevator" person2="% walks by an elevator" person3="The % walks by an elevator" person2level="info" person3level="info" />
 </messages>
 
 
