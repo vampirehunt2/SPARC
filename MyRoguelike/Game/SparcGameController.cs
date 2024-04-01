@@ -28,6 +28,12 @@ namespace Sparc.Game {
 
         protected Keybindings keybindings = Keybindings.Instance;
         private string command;
+        private ExpansionSlotsWindow expansionSlotsWindow;
+
+
+        public Keybindings Keybindings {
+            get { return keybindings; }
+        }
 
         protected override void runTurn() {
             base.runTurn();
@@ -81,22 +87,27 @@ namespace Sparc.Game {
         }
 
         protected override void setUpGame() {
-            // initialise the display
-            console = new VhConsole();  // this type is a fullscreen console
-            console.ForegroundColor = ConsoleColor.Blue;
-            fieldOfVision = new HardcodedShadowcastingFieldOfVision(); // this is a simple LoS implementation with a maximum range of 2 tiles
-            messageWindow = new SparcMessageWindow(41, 1, 38, 48, console);
-            messageManager = new SparcMessageManager(messageWindow);
-            console.CursorVisible = false;
-            console.Height = 50;
-            console.Width = 80;
-            console.Clear();
-            console.GoTo(0, 0);
-
             // intialise the PC
             pc = new SparcPc();
             pc.Character = '@';
             pc.Ai = new SparcPcAi(pc);
+
+            // initialise the console
+            console = new VhConsole();  // this type is a fullscreen console
+            console.CursorVisible = false;
+            console.Height = 50;
+            console.Width = 100;
+            console.Clear();
+            console.GoTo(0, 0);
+
+            // initialise the display
+            console.ForegroundColor = ConsoleColor.Blue;
+            fieldOfVision = new HardcodedShadowcastingFieldOfVision(); // this is a simple LoS implementation with a maximum range of 2 tiles
+            messageWindow = new SparcMessageWindow(70, 1, 30, 40, console);
+            messageManager = new SparcMessageManager(messageWindow);
+            expansionSlotsWindow = new ExpansionSlotsWindow(0, 0, 30, 32, console, (pc as IEquipmentBeing).Equipment);
+
+            
 
             // you can add a splash screen here
             //
@@ -110,7 +121,7 @@ namespace Sparc.Game {
             itemGenerator = new SparcItemGenerator(new ItemFacade());
 
             // init the viewport
-            viewPort = new ViewPort(1, 1, 40, 40, console, new Position(0, 0));
+            viewPort = new ViewPort(20, 0, 40, 40, console, new Position(0, 0));
             viewPort.Shade = false;
 
             // set up the level structure

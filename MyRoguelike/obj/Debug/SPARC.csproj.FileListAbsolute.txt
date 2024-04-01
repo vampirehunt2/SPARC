@@ -18,3 +18,4 @@ C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\bin\Debug\SPARC.pd
 C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\obj\Debug\SPARC.Properties.Resources.resources
 C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\obj\Debug\SPARC.exe
 C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\obj\Debug\SPARC.pdb
+C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\bin\Debug\VH.Engine.pdb

@@ -38,6 +38,7 @@ namespace Sparc.Game.Beings.Ai {
             else if (command == "south-west") action = new SparcMoveAction(pc, Step.SOUTH_WEST);
             else if (command == "take-stairs") action = new TakeStairsAction(pc);
             else if (command == "close-door") action = new CloseDoorAction(pc);
+            else if (command == "shoot") action = new SparcShootAction(pc, 10);  // TODO, code an actual range calculation
 
             // add other actions below
 
@@ -49,6 +50,22 @@ namespace Sparc.Game.Beings.Ai {
         public override bool InteractWithEnvironment(Position position) {
             if (new OpenDoorAction(Being, position).Perform()) return true;
             return base.InteractWithEnvironment(position);
+        }
+
+        public override object SelectTarget(object[] objects, AbstractAction action) {
+            if (action is ShootAction) return selectDirection(objects);
+            return base.SelectTarget(objects, action);
+        }
+
+        #endregion
+
+        #region private methods
+
+        private object selectDirection(object[] objects) {
+            GameController.Instance.MessageManager.ShowMessage("which-direction", Being);
+            char key = GameController.Instance.Console.ReadKey();
+            Step direction = ((SparcGameController)GameController.Instance).Keybindings.GetStepForKey(key);
+            return direction;
         }
 
         #endregion
