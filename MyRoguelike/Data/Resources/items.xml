@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items vamgine-version="1" sparc-version="1">
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="lead-battery" name="lead battery" accusativ="lead battery" plural="lead batteries" character="!" color="DarkGray" danger="1" />
+	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="lead-battery" name="lead battery" accusativ="lead battery" plural="lead batteries" character="!" color="DarkGray" danger="0" />
 	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="lithium-battery" name="lithium battery" accusativ="lithium battery" plural="lithium batteries" character="!" color="Yellow" danger="1" />
 
 	<!-- Sensors -->
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="1" />
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Blue" danger="1" />
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="radar" name="radar" accusativ="radar" plural="radars" character=":" color="Blue" danger="1" />
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="0" />
+	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Blue" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="radar" name="radar" accusativ="radar" plural="radars" character=":" color="Blue" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
 
 	<!-- Missle weapons -->
-	<item type-name="VH.Engine.World.Items.Weapons.Weapon" assembly-name="VH.Engine.dll" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" danger="0" />
-	<item type-name="VH.Engine.World.Items.Weapons.Weapon" assembly-name="VH.Engine.dll" id="phaser" name="laser" accusativ="laser" plural="lasers" character="/" color="Yellow" attack="2" defense="0" danger="1" />
-	<item type-name="VH.Engine.World.Items.Weapons.Weapon" assembly-name="VH.Engine.dll" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" danger="3" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" danger="0" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="laser" name="laser" accusativ="laser" plural="lasers" character="/" color="Yellow" attack="2" defense="0" danger="1" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" danger="3" />
 
+	<!-- Armor -->
+	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />
 </items>

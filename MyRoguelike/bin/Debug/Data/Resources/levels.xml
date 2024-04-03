@@ -9,7 +9,7 @@
 	<generator name="spaceship" type="SPARC.Levels.SpaceshipMapGenerator" assembly="SPARC.exe" />
 
 
-	<level name="L0" persistent="false" bidirectional="false" generator="spaceship" width="40" height="40" danger="0"/>
+	<level name="L0" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="0"/>
 	<level name="L1" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="0"/>
 	<level name="L2" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="1"/>
 	<level name="L3" persistent="false" bidirectional="false" generator="dungeon" width="40" height="40" danger="1"/>

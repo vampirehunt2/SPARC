@@ -64,10 +64,13 @@
     </Compile>
     <Compile Include="Game\Beings\Actions\SparcAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcMoveAction.cs" />
+    <Compile Include="Game\Beings\Actions\SparcPickupAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcShootAction.cs" />
     <Compile Include="Game\Beings\Ai\SparcPcAi.cs" />
     <Compile Include="Game\Beings\SparcMonster.cs" />
     <Compile Include="Game\Beings\SparcPc.cs" />
+    <Compile Include="Game\Items\ActivableItem.cs" />
+    <Compile Include="Game\Items\Sensor.cs" />
     <Compile Include="Game\Items\SparcItemGenerator.cs" />
     <Compile Include="Game\Items\SparcSlot.cs" />
     <Compile Include="Game\SparcGameController.cs" />

@@ -25,15 +25,31 @@ using VH.Game.World.Items;
 namespace Sparc.Game {
     public class SparcGameController : GameController {
 
+        #region fields
 
         protected Keybindings keybindings = Keybindings.Instance;
         private string command;
         private ExpansionSlotsWindow expansionSlotsWindow;
 
+        #endregion
+
+        #region properties
 
         public Keybindings Keybindings {
             get { return keybindings; }
         }
+
+        public ExpansionSlotsWindow ExpansionSlotsWindow { 
+            get { return expansionSlotsWindow; } 
+        }
+
+        public string Command {
+            get { return command; }
+        }
+
+        #endregion
+
+        #region protected methods
 
         protected override void runTurn() {
             base.runTurn();
@@ -66,8 +82,11 @@ namespace Sparc.Game {
                 // out-of-game actions. 
                 // these are actions performed by the player.
                 // these actions do not take up gametime.
-                if (Command == "backpack") { }          // show PC inventory
-                else if (Command == "show-help") { }    // show game help
+                if (Command == "show-help") {
+                    messageWindow.Clear();
+                    console.ForegroundColor = ConsoleColor.Gray;
+                    messageWindow.ShowMessage("\n" + Keybindings.ToString());
+                } 
                 else if (Command == "quit") {
                     string msg = Translator.Instance["quit?"];
                     if (new YesNoMenu(msg, messageWindow, 'Y', 'N').ShowMenu() == MenuResult.OK) {
@@ -76,10 +95,6 @@ namespace Sparc.Game {
                     messageWindow.Clear();
                 }
             }
-        }
-
-        public string Command {
-            get { return command; }
         }
 
         protected override void runBaseAction(Being performer) {
@@ -96,18 +111,16 @@ namespace Sparc.Game {
             console = new VhConsole();  // this type is a fullscreen console
             console.CursorVisible = false;
             console.Height = 50;
-            console.Width = 100;
+            console.Width = 120;
             console.Clear();
             console.GoTo(0, 0);
 
             // initialise the display
             console.ForegroundColor = ConsoleColor.Blue;
             fieldOfVision = new HardcodedShadowcastingFieldOfVision(); // this is a simple LoS implementation with a maximum range of 2 tiles
-            messageWindow = new SparcMessageWindow(70, 1, 30, 40, console);
+            messageWindow = new SparcMessageWindow(80, 1, 40, 40, console);
             messageManager = new SparcMessageManager(messageWindow);
-            expansionSlotsWindow = new ExpansionSlotsWindow(0, 0, 30, 32, console, (pc as IEquipmentBeing).Equipment);
-
-            
+            expansionSlotsWindow = new ExpansionSlotsWindow(0, 0, 40, 32, console, (pc as IEquipmentBeing).Equipment);
 
             // you can add a splash screen here
             //
@@ -121,7 +134,7 @@ namespace Sparc.Game {
             itemGenerator = new SparcItemGenerator(new ItemFacade());
 
             // init the viewport
-            viewPort = new ViewPort(20, 0, 40, 40, console, new Position(0, 0));
+            viewPort = new ViewPort(40, 0, 40, 40, console, new Position(0, 0));
             viewPort.Shade = false;
 
             // set up the level structure
@@ -132,6 +145,8 @@ namespace Sparc.Game {
         protected override void tearDownGame() {
             // save game stuff goes here
         }
+
+        #endregion
 
     }
 }

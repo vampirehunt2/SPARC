@@ -11,6 +11,7 @@
 	<binding command="wait"         key="5"  name="Wait"/>
 	<binding command="take-stairs"  key=">"  name="Take stairs"/>
 	<binding command="shoot"		key="t"  name="Shoot" />
+	<binding command="pick-up"		key=","  name="Pick up" />
 	<binding command="show-help"    key="?"  name="Help" />
 	<binding command="quit"         key="Q"  name="Quit"/>
 </keybindings>

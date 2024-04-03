@@ -8,6 +8,7 @@ using VH.Engine.Game;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
 using VH.Engine.World.Items;
+using VH.Engine.World.Items.Weapons;
 
 namespace SPARC.Game.Beings.Actions {
     public class SparcShootAction: ShootAction {
@@ -15,6 +16,14 @@ namespace SPARC.Game.Beings.Actions {
         #region constructors
 
         public SparcShootAction(Being performer, int range): base(performer, range) { }
+
+        #endregion
+
+        #region properties
+
+        public override MissleWeapon MissleWeapon {
+            get { return null; }    // TODO
+        }
 
         #endregion
 
@@ -44,6 +53,9 @@ namespace SPARC.Game.Beings.Actions {
 
         private char getCharacter() {
             Being attackee = GameController.Instance.GetBeingAt(pos);
+            if (!isShootable(pos)) {
+                return '*';
+            }
             if (attackee != null) {
                 return '*';
             }

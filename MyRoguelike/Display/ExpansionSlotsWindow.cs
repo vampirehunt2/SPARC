@@ -1,10 +1,12 @@
-﻿using SPARC.Game.Items;
+﻿using Sparc.Game.Beings;
+using SPARC.Game.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VH.Engine.Display;
+using VH.Engine.Game;
 using VH.Engine.World.Items;
 
 namespace SPARC.Display {
@@ -20,6 +22,10 @@ namespace SPARC.Display {
             Refresh();
         }
 
+        public void StartListening() {
+            SparcPc pc = GameController.Instance.Pc as SparcPc;
+        }
+
         public void Refresh() {
             StringBuilder sb = new StringBuilder();
             for (int l = 0; l < width; ++l) sb.Append(' '); 
@@ -29,7 +35,7 @@ namespace SPARC.Display {
                 Item item = equipment.Slots[i].Item;
                 if (item != null) color = item.Color;
                 console.ForegroundColor = color;
-                Write(i, equipment.Slots[i].ToString());
+                Write(i, "$" + i.ToString("X2") + ":" + equipment.Slots[i].ToString());
             }
         }
 
@@ -38,6 +44,10 @@ namespace SPARC.Display {
             while (i < s.Length && i < this.width) {
                 Write(s[i++], i, y);
             }
+        }
+
+        private void equipmentModified() {
+            Refresh();
         }
     }
 }
