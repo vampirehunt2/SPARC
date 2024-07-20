@@ -10,6 +10,9 @@
 	<message key="pass-elevator" person2="% walks by an elevator" person3="The % walks by an elevator" person2level="info" person3level="info" />
 	<message key="no-slots" person2="No free expansion slots" person3="" person2level="warning" person3level="info" />
 	<message key="which-direction" person2="Which dirction?" person3="" person2level="info" person3level="info" />
+	<message key="select-slot" person2="Select slot" person3="" person2level="info" person3level="info" />
+	<message key="invalid-slot" person2="Invalid slot" person3="" person2level="warning" person3level="info" />
+	<message key="drop" person2="% drops the %" person3="The % drps %" person2level="info" person3level="info"/>
 
 </messages>
 

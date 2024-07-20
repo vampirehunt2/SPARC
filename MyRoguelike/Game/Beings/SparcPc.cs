@@ -14,7 +14,7 @@ namespace Sparc.Game.Beings {
 
         #region constants
 
-        private const int MAX_SLOTS = 32;
+        public const int MAX_SLOTS = 32;
 
         #endregion
 

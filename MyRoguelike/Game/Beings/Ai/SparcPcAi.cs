@@ -40,6 +40,7 @@ namespace Sparc.Game.Beings.Ai {
             else if (command == "close-door") action = new CloseDoorAction(pc);
             else if (command == "shoot") action = new SparcShootAction(pc, 10);  // TODO, code an actual range calculation
             else if (command == "pick-up") action = new SparcPickupAction(pc);
+            else if (command == "drop") action = new SparcDropAction(pc);
 
             // add other actions below
 
