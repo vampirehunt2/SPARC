@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VH.Engine.Display;
 using VH.Engine.Game;
 using VH.Engine.Levels;
+using VH.Engine.Translations;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
 using VH.Engine.World.Beings.AI;
@@ -56,7 +58,9 @@ namespace Sparc.Game.Beings.Ai {
 
         public override object SelectTarget(object[] objects, AbstractAction action) {
             if (action is ShootAction) return selectDirection(objects);
-            return base.SelectTarget(objects, action);
+            LetterMenu menu = new LetterMenu(Translator.Instance["select-item"], objects, GameController.Instance.MessageWindow, true);
+            if (menu.ShowMenu() == MenuResult.OK) return menu.SelectedItem;
+            return null;
         }
 
         #endregion

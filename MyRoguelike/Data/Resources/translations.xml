@@ -3,5 +3,6 @@
 	<entry key="you" value="SPARC" />
 	<entry key="slot" value="Expansion slot" />
 	<entry key="quit?" value="Terminate mission?" />
+	<entry key="select-item" value="Select item" />
 </translations>
 
