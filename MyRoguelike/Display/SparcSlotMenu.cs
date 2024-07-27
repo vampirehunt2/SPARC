@@ -45,6 +45,7 @@ namespace SPARC.Display {
                 showInvalidSlot();
                 return MenuResult.Cancel;
             }
+            SelectedIndex = slotNum;
             Item item = slot.Item;
             if (item == null) {
                 showInvalidSlot();
