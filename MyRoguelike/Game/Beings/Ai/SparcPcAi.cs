@@ -1,4 +1,5 @@
-﻿using SPARC.Game.Beings.Actions;
+﻿using SPARC.Display;
+using SPARC.Game.Beings.Actions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ using VH.Engine.Translations;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
 using VH.Engine.World.Beings.AI;
+using VH.Engine.World.Items;
 
 namespace Sparc.Game.Beings.Ai {
     public class SparcPcAi : BaseAi {
@@ -58,8 +60,13 @@ namespace Sparc.Game.Beings.Ai {
 
         public override object SelectTarget(object[] objects, AbstractAction action) {
             if (action is ShootAction) return selectDirection(objects);
-            LetterMenu menu = new LetterMenu(Translator.Instance["select-item"], objects, GameController.Instance.MessageWindow, true);
-            if (menu.ShowMenu() == MenuResult.OK) return menu.SelectedItem;
+            if (action is SparcDropAction) {
+                SparcSlotMenu sslmenu = new SparcSlotMenu();
+                if (sslmenu.ShowMenu() == MenuResult.OK) return sslmenu.SelectedItem;
+                return null;
+            }
+            LetterMenu lmenu = new LetterMenu(Translator.Instance["select-item"], objects, GameController.Instance.MessageWindow, true);
+            if (lmenu.ShowMenu() == MenuResult.OK) return lmenu.SelectedItem;
             return null;
         }
 

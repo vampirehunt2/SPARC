@@ -17,18 +17,19 @@ namespace SPARC.Game.Beings.Actions {
         }
 
         public override bool Perform() {
-            SparcSlotMenu menu = new SparcSlotMenu();
-            if (menu.ShowMenu() == MenuResult.OK) {
-                SparcGameController ctrl = (SparcGameController)GameController.Instance;
-                Item item = menu.Slot.Item;
-                // ctrl.MessageManager.ShowMessage("drop", performer, item, force);
-                item.Position = ctrl.Pc.Position;
-                menu.Slot.Item = null;
-                ctrl.Level.Items.Add(item);
-                ctrl.ExpansionSlotsWindow.Refresh();
-                return true;
-            }
-            return false;
+            if (!(performer is IEquipmentBeing)) return false;
+            Equipment equipment = (performer as IEquipmentBeing).Equipment;
+            EquipmentSlot slot = (EquipmentSlot)performer.Ai.SelectTarget(equipment.Slots.ToArray(), this);
+            if (slot == null) return false;
+            Item item = slot.Item;
+            if (item == null) return false;
+            SparcGameController ctrl = (SparcGameController)GameController.Instance;
+            // ctrl.MessageManager.ShowMessage("drop", performer, item, force);
+            item.Position = performer.Position;
+            slot.Item = null;
+            ctrl.Level.Items.Add(item);
+            ctrl.ExpansionSlotsWindow.Refresh();
+            return true;
         }
     }
 }

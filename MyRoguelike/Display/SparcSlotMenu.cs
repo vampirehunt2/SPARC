@@ -10,6 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Sparc.Game.Beings;
 using VH.Engine.World.Items;
 using Menu = VH.Engine.Display.Menu;
+using VH.Engine.World.Beings;
 
 namespace SPARC.Display {
 
@@ -23,6 +24,7 @@ namespace SPARC.Display {
         }
 
         public override MenuResult ShowMenu() {
+            base.objects = (ctrl.Pc as IEquipmentBeing).Equipment.Slots.ToArray(); 
             ctrl.Console.ForegroundColor = ConsoleColor.Gray;
             ctrl.MessageManager.ShowDirectMessage("select-slot");
             ctrl.Console.Refresh();
