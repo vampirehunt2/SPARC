@@ -35,7 +35,9 @@ namespace Sparc.Game.Beings {
             }
             ItemFacade facade = new ItemFacade();
             equipment.Slots[0].Item = facade.CreateItemById("proximity-sensor");
+            (equipment.Slots[0].Item as IActivable).Active = true;
             equipment.Slots[1].Item = facade.CreateItemById("phaser");
+            (equipment.Slots[1].Item as IActivable).Active = true;
             equipment.Slots[2].Item = facade.CreateItemById("lead-battery");
             equipment.Slots[3].Item = facade.CreateItemById("shield-generator");
         }

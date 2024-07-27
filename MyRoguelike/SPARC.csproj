@@ -56,13 +56,16 @@
     <Compile Include="Display\ExpansionSlotsWindow.cs" />
     <Compile Include="Display\SparcMessageManager.cs" />
     <Compile Include="Display\SparcMessageWindow.cs" />
+    <Compile Include="Display\SparcSlotMenu.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game\Beings\Actions\ActivateAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcAction.cs" />
+    <Compile Include="Game\Beings\Actions\SparcDropAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcMoveAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcPickupAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcShootAction.cs" />
@@ -72,6 +75,7 @@
     <Compile Include="Game\Items\ActivableItem.cs" />
     <Compile Include="Game\Items\Sensor.cs" />
     <Compile Include="Game\Items\SparcItemGenerator.cs" />
+    <Compile Include="Game\Items\SparcMissleWeapon.cs" />
     <Compile Include="Game\Items\SparcSlot.cs" />
     <Compile Include="Game\SparcGameController.cs" />
     <Compile Include="Levels\SpaceshipMapGenerator.cs" />

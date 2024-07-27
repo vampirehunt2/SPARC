@@ -15,5 +15,11 @@ namespace SPARC.Game.Items {
             get => active;
             set => active = value;
         }
+
+        public override string ToString() {
+            string s = base.ToString();
+            if (Active) s += " {a}";
+            return s;
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace Sparc.Game.Beings.Ai {
             else if (command == "shoot") action = new SparcShootAction(pc, 10);  // TODO, code an actual range calculation
             else if (command == "pick-up") action = new SparcPickupAction(pc);
             else if (command == "drop") action = new SparcDropAction(pc);
+            else if (command == "activate") action = new ActivateAction(pc);
 
             // add other actions below
 
@@ -60,7 +61,7 @@ namespace Sparc.Game.Beings.Ai {
 
         public override object SelectTarget(object[] objects, AbstractAction action) {
             if (action is ShootAction) return selectDirection(objects);
-            if (action is SparcDropAction) {
+            if (action is SparcDropAction || action is ActivateAction) {
                 SparcSlotMenu sslmenu = new SparcSlotMenu();
                 if (sslmenu.ShowMenu() == MenuResult.OK) return sslmenu.SelectedItem;
                 return null;
