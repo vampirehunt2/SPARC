@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPARC.Game.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,17 @@ namespace SPARC.Game.Beings.Actions {
         #region properties
 
         public override MissleWeapon MissleWeapon {
-            get { return null; }    // TODO
+            get {
+                if (!(performer is IEquipmentBeing)) return null;
+                Equipment eq = (performer as IEquipmentBeing).Equipment;
+                foreach (EquipmentSlot slot in  eq.Slots) {
+                    if (slot.Item != null &&
+                        slot.Item is SparcMissleWeapon &&
+                        (slot.Item as SparcMissleWeapon).Active)
+                        return slot.Item as SparcMissleWeapon;
+                }
+                return null;
+            }    
         }
 
         #endregion
@@ -36,12 +47,14 @@ namespace SPARC.Game.Beings.Actions {
             ItemFacade facade = new ItemFacade();
             Ammo missleAnimation = new Ammo();
             missleAnimation.Character = getCharacter();
-            missleAnimation.Color = ConsoleColor.White;
+            missleAnimation.Color = MissleWeapon.Color;
             missleAnimation.Position = pos;
             controller.ViewPort.Display(missleAnimation, controller.FieldOfVision, performer.Position);
             controller.ViewPort.Refresh(pos);
             Thread.Sleep(100);
-            /*missleAnimation.Character = character;
+            /* uncomment for advancing missle.
+             * leave commented for ray weapons
+             * missleAnimation.Character = character;
             missleAnimation.Color = color;
             controller.ViewPort.Display(missleAnimation, controller.FieldOfVision, performer.Position);
             controller.ViewPort.Refresh(pos);*/
