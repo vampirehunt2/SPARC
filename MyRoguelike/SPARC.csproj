@@ -66,6 +66,7 @@
     <Compile Include="Game\Beings\Actions\ActivateAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcDropAction.cs" />
+    <Compile Include="Game\Beings\Actions\SparcMissleAttackAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcMoveAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcPickupAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcShootAction.cs" />

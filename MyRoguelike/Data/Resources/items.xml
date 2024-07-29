@@ -10,9 +10,9 @@
 	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
 
 	<!-- Missle weapons -->
-	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" danger="0" />
-	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="laser" name="laser" accusativ="laser" plural="lasers" character="/" color="Yellow" attack="2" defense="0" danger="1" />
-	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" danger="3" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" range="2" danger="0" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="laser" name="laser" accusativ="laser" plural="lasers" character="/" color="Yellow" attack="2" defense="0" range="5" danger="1"  />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" range="4" danger="3" />
 
 	<!-- Armor -->
 	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />

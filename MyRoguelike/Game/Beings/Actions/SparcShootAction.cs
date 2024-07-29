@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using VH.Engine.Game;
+using VH.Engine.Levels;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
 using VH.Engine.World.Items;
@@ -14,9 +15,11 @@ using VH.Engine.World.Items.Weapons;
 namespace SPARC.Game.Beings.Actions {
     public class SparcShootAction: ShootAction {
 
+
         #region constructors
 
-        public SparcShootAction(Being performer, int range): base(performer, range) { }
+        public SparcShootAction(Being performer): base(performer, 0) { 
+        }
 
         #endregion
 
@@ -34,6 +37,34 @@ namespace SPARC.Game.Beings.Actions {
                 }
                 return null;
             }    
+        }
+
+        #endregion
+
+        #region public methods
+
+        public override bool Perform() {
+            pos = performer.Position;
+            step = (Step)performer.Ai.SelectTarget(null, this);
+            bool hit = false;
+            int currentRange = 0;
+            while (!hit & currentRange < (MissleWeapon as SparcMissleWeapon).Range) {
+                currentRange++;
+                pos = pos.AddStep(step);
+                missleStep();
+                if (!isShootable(pos)) {
+                    notify("hit-wall");
+                    break;
+                }
+                Being attackee = GameController.Instance.GetBeingAt(pos);
+                AbstractAttackAction attack;
+                if (attackee != null) {
+                    hit = true;
+                    attack = new SparcMissleAttackAction(performer, attackee, MissleWeapon as SparcMissleWeapon);
+                    attack.Perform();
+                }
+            }
+            return true;
         }
 
         #endregion
