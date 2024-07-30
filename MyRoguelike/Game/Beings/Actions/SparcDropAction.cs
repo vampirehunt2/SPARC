@@ -24,8 +24,8 @@ namespace SPARC.Game.Beings.Actions {
             Item item = slot.Item;
             if (item == null) return false;
             SparcGameController ctrl = (SparcGameController)GameController.Instance;
-            // ctrl.MessageManager.ShowMessage("drop", performer, item, force);
             item.Position = performer.Position;
+            ctrl.MessageManager.ShowMessage("drop", performer, item);
             slot.Item = null;
             ctrl.Level.Items.Add(item);
             ctrl.ExpansionSlotsWindow.Refresh();

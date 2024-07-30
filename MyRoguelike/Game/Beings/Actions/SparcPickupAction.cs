@@ -19,18 +19,20 @@ namespace SPARC.Game.Beings.Actions {
 
         public override bool PickUp() {
             if (!(performer is IEquipmentBeing)) return false;
+            SparcGameController ctrl = (SparcGameController)GameController.Instance;
             IEquipmentBeing being = performer as IEquipmentBeing;
             Equipment equipment = being.Equipment;
             for (int i = 0; i < equipment.Slots.Count; ++i) {
                 if (equipment.Slots[i].Item == null) {
                     equipment.Slots[i].Item = item;
-                    for (int k = 0; k < GameController.Instance.Level.Items.Count; ++k) {
+                    for (int k = 0; k < ctrl.Level.Items.Count; ++k) {
                         if (ReferenceEquals(GameController.Instance.Level.Items[k], item)) {
-                            GameController.Instance.Level.Items.RemoveAt(k);
+                            ctrl.Level.Items.RemoveAt(k);
                             break;
                         }
                     }
                     (GameController.Instance as SparcGameController).ExpansionSlotsWindow.Refresh();
+                    ctrl.MessageManager.ShowMessage("pick-up", performer, item);
                     return true; 
                 }
             }

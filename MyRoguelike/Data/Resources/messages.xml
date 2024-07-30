@@ -12,7 +12,9 @@
 	<message key="which-direction" person2="Which dirction?" person3="" person2level="info" person3level="info" />
 	<message key="select-slot" person2="Select slot" person3="" person2level="info" person3level="info" />
 	<message key="invalid-slot" person2="Invalid slot" person3="" person2level="warning" person3level="info" />
-	<message key="drop" person2="% drops the %" person3="The % drps %" person2level="info" person3level="info"/>
+	<message key="drop" person2="% drops the %" person3="The % drops the %" person2level="info" person3level="info"/>
+	<message key="pick-up" person2="% picks up the %" person3="The % picks up the %" person2level="info" person3level="info"/>
+	<message key="activate" person2="% activates the %" person3="The % activates the %" person2level="info" person3level="info"/>
 
 </messages>
 

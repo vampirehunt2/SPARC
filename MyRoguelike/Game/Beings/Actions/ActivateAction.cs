@@ -38,6 +38,7 @@ namespace SPARC.Game.Beings.Actions {
                     (equipment.Slots[i].Item as IActivable).Active = false;
                 }
             }
+            ctrl.MessageManager.ShowMessage("activate", performer, item);
             ctrl.ExpansionSlotsWindow.Refresh();
             return true;
         }
