@@ -27,7 +27,7 @@ namespace Sparc.Game.Beings {
         #region constructors
 
         public SparcPc(): base() {
-            this.equipment = new Equipment();
+            this.equipment = new SparcEquipment();
             identity = Accusativ = Translator.Instance["you"];
             for (int i = 0; i < MAX_SLOTS; i++) {
                 EquipmentSlot slot = new SparcSlot();
@@ -39,6 +39,7 @@ namespace Sparc.Game.Beings {
             equipment.Slots[1].Item = facade.CreateItemById("phaser");
             (equipment.Slots[1].Item as IActivable).Active = true;
             equipment.Slots[2].Item = facade.CreateItemById("lead-battery");
+            (equipment.Slots[2].Item as IActivable).Active = true;
             equipment.Slots[3].Item = facade.CreateItemById("shield-generator");
         }
 

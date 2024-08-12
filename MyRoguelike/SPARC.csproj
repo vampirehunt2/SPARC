@@ -74,7 +74,10 @@
     <Compile Include="Game\Beings\SparcMonster.cs" />
     <Compile Include="Game\Beings\SparcPc.cs" />
     <Compile Include="Game\Items\ActivableItem.cs" />
+    <Compile Include="Game\Items\EnergySource.cs" />
     <Compile Include="Game\Items\Sensor.cs" />
+    <Compile Include="Game\Items\Shield.cs" />
+    <Compile Include="Game\Items\SparcEquipment.cs" />
     <Compile Include="Game\Items\SparcItemGenerator.cs" />
     <Compile Include="Game\Items\SparcMissleWeapon.cs" />
     <Compile Include="Game\Items\SparcSlot.cs" />

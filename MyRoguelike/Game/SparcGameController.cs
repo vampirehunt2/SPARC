@@ -78,6 +78,7 @@ namespace Sparc.Game {
                 moveMonsters();
                 Pc.Move();
                 runBaseAction(Pc);
+                ExpansionSlotsWindow.Refresh();
             } else {
                 // out-of-game actions. 
                 // these are actions performed by the player.

@@ -39,7 +39,6 @@ namespace SPARC.Game.Beings.Actions {
                 }
             }
             ctrl.MessageManager.ShowMessage("activate", performer, item);
-            ctrl.ExpansionSlotsWindow.Refresh();
             return true;
         }
     }

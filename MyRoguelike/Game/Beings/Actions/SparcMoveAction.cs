@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPARC.Game.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using VH.Engine.Game;
 using VH.Engine.Levels;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Beings.Actions;
+using VH.Engine.World.Items;
 
 namespace SPARC.Game.Beings.Actions {
     public class SparcMoveAction : MoveAction {
@@ -15,7 +17,11 @@ namespace SPARC.Game.Beings.Actions {
 
         public override bool Perform() {
             bool result = base.Perform();
-            if (result) { showFeatureNames(); }
+            if (result) showFeatureNames();
+            if (performer is IEquipmentBeing) {
+                SparcEquipment eq = (SparcEquipment)(performer as IEquipmentBeing).Equipment;
+                eq.ConsumeEnergy();
+            }
             return result;
         }
 

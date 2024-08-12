@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <items vamgine-version="1" sparc-version="1">
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="lead-battery" name="lead battery" accusativ="lead battery" plural="lead batteries" character="!" color="DarkGray" danger="0" />
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="lithium-battery" name="lithium battery" accusativ="lithium battery" plural="lithium batteries" character="!" color="Yellow" danger="1" />
+	<item type-name="SPARC.Game.Items.EnergySource" assembly-name="Sparc.exe" id="lead-battery" name="lead battery" accusativ="lead battery" plural="lead batteries" character="!" color="DarkGray" max-energy="1000" danger="0" />
+	<item type-name="SPARC.Game.Items.EnergySource" assembly-name="Sparc.exe" id="lithium-battery" name="lithium battery" accusativ="lithium battery" plural="lithium batteries" character="!" color="Yellow" max-energy="5000" danger="1" />
 
 	<!-- Sensors -->
 	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="0" />
@@ -15,5 +15,5 @@
 	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" range="4" danger="3" />
 
 	<!-- Armor -->
-	<item type-name="VH.Engine.World.Items.Item" assembly-name="VH.Engine.dll" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />
+	<item type-name="SPARC.Game.Items.Shield" assembly-name="Sparc.exe" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />
 </items>
