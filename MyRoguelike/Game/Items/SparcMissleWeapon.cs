@@ -9,6 +9,12 @@ using VH.Engine.World.Items.Weapons;
 namespace SPARC.Game.Items {
     public class SparcMissleWeapon : MissleWeapon, IActivable {
 
+        #region constants
+
+        public const char CHARACTER = '/';
+
+        #endregion
+
         #region fields
 
         private bool active;

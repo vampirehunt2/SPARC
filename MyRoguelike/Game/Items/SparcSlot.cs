@@ -12,6 +12,10 @@ namespace SPARC.Game.Items {
             id = "slot";
         }
 
+        public SparcSlot(Item item): this() {
+            this.item = item;
+        }
+
         public override bool IsItemCompatible(Item item) {
             return true;
         }

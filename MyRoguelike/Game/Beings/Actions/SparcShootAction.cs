@@ -46,6 +46,7 @@ namespace SPARC.Game.Beings.Actions {
         public override bool Perform() {
             pos = performer.Position;
             step = (Step)performer.Ai.SelectTarget(null, this);
+            if (step == null || step == Step.NONE) return false;          
             bool hit = false;
             int currentRange = 0;
             while (!hit & currentRange < (MissleWeapon as SparcMissleWeapon).Range) {
@@ -80,7 +81,7 @@ namespace SPARC.Game.Beings.Actions {
             missleAnimation.Character = getCharacter();
             missleAnimation.Color = MissleWeapon.Color;
             missleAnimation.Position = pos;
-            controller.ViewPort.Display(missleAnimation, controller.FieldOfVision, performer.Position);
+            controller.ViewPort.Display(missleAnimation, controller.FieldOfVision, controller.Pc.Position);
             controller.ViewPort.Refresh(pos);
             Thread.Sleep(100);
             /* uncomment for advancing missle.

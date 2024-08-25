@@ -70,7 +70,10 @@
     <Compile Include="Game\Beings\Actions\SparcMoveAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcPickupAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcShootAction.cs" />
+    <Compile Include="Game\Beings\Ai\HostileAi.cs" />
     <Compile Include="Game\Beings\Ai\SparcPcAi.cs" />
+    <Compile Include="Game\Beings\LittleGreenMan.cs" />
+    <Compile Include="Game\Beings\Robot.cs" />
     <Compile Include="Game\Beings\SparcMonster.cs" />
     <Compile Include="Game\Beings\SparcPc.cs" />
     <Compile Include="Game\Items\ActivableItem.cs" />

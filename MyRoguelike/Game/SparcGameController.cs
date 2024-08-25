@@ -55,13 +55,7 @@ namespace Sparc.Game {
             base.runTurn();
 
             // display the whole game screen
-            console.ForegroundColor = ConsoleColor.Gray;
-            fieldOfVision.ComputeFieldOfVision(Map, pc.Position, fieldOfVision.MaxVisionRange);
-            viewPort.RenderMap(fieldOfVision);
-            foreach (Item item in Level.Items) viewPort.Display(item, fieldOfVision, pc.Position);
-            foreach (Monster monster in Level.Monsters) viewPort.Display(monster, fieldOfVision, pc.Position);
-            viewPort.Display(pc, fieldOfVision, pc.Position);
-            viewPort.Refresh();
+            reDraw();
 
             // select next action
             GameController.Instance.Console.ClearBuffer();
@@ -74,6 +68,7 @@ namespace Sparc.Game {
             action = pc.Ai.SelectAction();
             // perform selected pc action, if there is one.
             if (action != null && action.Perform()) {
+                if (action is MoveAction) reDraw();
                 gametimeTicks = (int)(action.TimeNeeded / pc.Speed);
                 moveMonsters();
                 Pc.Move();
@@ -149,5 +144,17 @@ namespace Sparc.Game {
 
         #endregion
 
+        #region private methods
+
+        private void reDraw() {
+            fieldOfVision.ComputeFieldOfVision(Map, pc.Position, fieldOfVision.MaxVisionRange);
+            viewPort.RenderMap(fieldOfVision);
+            foreach (Item item in Level.Items) viewPort.Display(item, fieldOfVision, pc.Position);
+            foreach (Monster monster in Level.Monsters) viewPort.Display(monster, fieldOfVision, pc.Position);
+            viewPort.Display(pc, fieldOfVision, pc.Position);
+            viewPort.Refresh();
+        }
+
+        #endregion
     }
 }
