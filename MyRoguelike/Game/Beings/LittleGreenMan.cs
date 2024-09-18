@@ -18,6 +18,9 @@ namespace SPARC.Game.Beings {
             SparcMissleWeapon laser = (SparcMissleWeapon)(new ItemFacade()).CreateItemById("laser");
             laser.Active = true;
             equipment.Slots.Add(new SparcSlot(laser));
+            EnergySource battery = (EnergySource)(new ItemFacade()).CreateItemById("lithium-battery");
+            battery.Active = true;
+            equipment.Slots.Add(new SparcSlot(battery));
         }
     }
 }
