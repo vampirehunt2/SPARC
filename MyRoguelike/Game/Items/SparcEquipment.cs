@@ -16,6 +16,19 @@ namespace SPARC.Game.Items {
 
         #endregion
 
+        #region properties
+
+        public bool IsFull {
+            get {
+                foreach (EquipmentSlot slot in this) {
+                    if (slot.Item == null) return false;
+                }
+                return true;
+            }
+        }
+
+        #endregion
+
         #region public methods
 
         public bool ConsumeEnergy(int amount) {

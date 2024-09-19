@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPARC.Game.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,10 +29,12 @@ namespace SPARC.Game.Beings {
                 foreach (EquipmentSlot slot in (this as IEquipmentBeing).Equipment.Slots) {
                     if (slot != null && slot.Item != null & Rng.Random.NextFloat() > DROP_RATE) {
                         slot.Item.Position = Position;
+                        if (slot.Item is IActivable) ((IActivable)slot.Item).Active = false;
                         GameController.Instance.Level.Items.Add(slot.Item);
                     }
                 }
             }
         }
+
     }
 }

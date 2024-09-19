@@ -44,6 +44,7 @@ namespace SPARC.Game.Beings.Actions {
         #region public methods
 
         public override bool Perform() {
+            if (MissleWeapon == null) return false;
             if (!((SparcMissleWeapon)MissleWeapon).Fire(performer)) {
                 notify("fail-shoot", MissleWeapon);
                 return false;

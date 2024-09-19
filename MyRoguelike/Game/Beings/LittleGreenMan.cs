@@ -21,6 +21,8 @@ namespace SPARC.Game.Beings {
             EnergySource battery = (EnergySource)(new ItemFacade()).CreateItemById("lithium-battery");
             battery.Active = true;
             equipment.Slots.Add(new SparcSlot(battery));
+            equipment.Slots.Add(new SparcSlot()); // add a couple free slots
+            equipment.Slots.Add(new SparcSlot());
         }
     }
 }

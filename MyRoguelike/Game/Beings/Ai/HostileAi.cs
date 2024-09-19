@@ -11,9 +11,18 @@ using VH.Engine.World.Beings;
 using System.Drawing;
 using SPARC.Game.Items;
 using SPARC.Game.Beings.Actions;
+using VH.Engine.Random;
 
 namespace SPARC.Game.Beings.Ai {
     public class HostileAi : BaseAi {
+
+        #region constants
+
+        private const float SHOOT_RATE = 0.5f;
+        private const float RANDOM_MOVE_RATE = 0.1f;
+
+        #endregion
+
 
         #region constructors
 
@@ -26,13 +35,24 @@ namespace SPARC.Game.Beings.Ai {
         #region public methods
 
         public override AbstractAction SelectAction() {
+            if (canPickup()) return new SparcPickupAction(Being);
             // try to find oponent
             Being oponent = getOponent();
-            if (oponent != null) {
-                if (isAdjacentTo(oponent)) return new AttackAction(Being, oponent);
-                else if (canShoot()) return new SparcShootAction(Being);
-                else return new MoveAction(Being, getStepTowards(getPossibleSteps(Being, oponent.Position)));
+            if (oponent != null) { 
+                if (isAdjacentTo(oponent)) { // if adjacent to the oponent, choose mellee or missle attack at random
+                    if (Rng.Random.NextFloat() < SHOOT_RATE) return new SparcShootAction(Being);
+                    else return new AttackAction(Being, oponent);
+                } else if (canShoot()) {
+                    return new SparcShootAction(Being);
+                } else {
+                    if (canPickup()) return new SparcPickupAction(Being);
+                    if (Rng.Random.NextFloat() < 1 - RANDOM_MOVE_RATE) { // sometimes, move randomly, even in pursuit
+                        return new MoveAction(Being, getStepTowards(getPossibleSteps(Being, oponent.Position)));
+                    }
+                }
             }
+            // 
+            
             // try to move in a random direction
             Step step = Step.CreateRandomStep();
             Position position = Being.Position.AddStep(step);
@@ -49,6 +69,9 @@ namespace SPARC.Game.Beings.Ai {
                 Being oponent = getOponent();
                 if (oponent != null) return getStep();
             }
+            if (action is PickUpAction) {
+                return GameController.Instance.Level.GetItemsAt(Being.Position).First();
+            }
             return base.SelectTarget(objects, action);
         }
 
@@ -64,6 +87,15 @@ namespace SPARC.Game.Beings.Ai {
             SparcMissleWeapon weapon = (SparcMissleWeapon)eq.GetActiveItem(SparcMissleWeapon.CHARACTER);
             if (weapon == null) return false;
             return getStep() != Step.NONE;
+        }
+
+        protected bool canPickup() {
+            if (!(Being is IEquipmentBeing)) return false;
+            SparcEquipment equipment = (SparcEquipment)(Being as IEquipmentBeing).Equipment;
+            if (equipment == null) return false;
+            if (equipment.IsFull) return false;
+            if (GameController.Instance.Level.GetItemsAt(Being.Position).Count() == 0) return false;
+            return true;
         }
 
         protected Step getStep() {
