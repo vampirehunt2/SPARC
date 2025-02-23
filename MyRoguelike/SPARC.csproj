@@ -83,7 +83,11 @@
     <Compile Include="Game\Items\Disks\DiskOfCharging.cs" />
     <Compile Include="Game\Items\Disks\DiskOfItemDestruction.cs" />
     <Compile Include="Game\Items\EnergySource.cs" />
-    <Compile Include="Game\Items\Sensor.cs" />
+    <Compile Include="Game\Items\Sensors\InfraredSensor.cs" />
+    <Compile Include="Game\Items\Sensors\OpticalSensor.cs" />
+    <Compile Include="Game\Items\Sensors\ProximitySensor.cs" />
+    <Compile Include="Game\Items\Sensors\Radar.cs" />
+    <Compile Include="Game\Items\Sensors\Sensor.cs" />
     <Compile Include="Game\Items\Shield.cs" />
     <Compile Include="Game\Items\SparcEquipment.cs" />
     <Compile Include="Game\Items\SparcItemGenerator.cs" />

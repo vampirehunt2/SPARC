@@ -98,6 +98,7 @@ namespace Sparc.Game {
         }
 
         protected override void setUpGame() {
+
             // intialise the PC
             pc = new SparcPc();
             pc.Character = '@';
@@ -123,6 +124,7 @@ namespace Sparc.Game {
 
             // optionally, draw the outline of the game window frames 
             //
+
 
             // initialise the generators
             // itemGenerator = new ItemGenerator(new ItemFacade());

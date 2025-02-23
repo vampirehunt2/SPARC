@@ -41,6 +41,7 @@ namespace Sparc.Game.Beings {
             equipment.Slots[2].Item = facade.CreateItemById("lead-battery");
             (equipment.Slots[2].Item as IActivable).Active = true;
             equipment.Slots[3].Item = facade.CreateItemById("shield-generator");
+            equipment.Slots[4].Item = facade.CreateItemById("optical-sensor");
         }
 
         #endregion

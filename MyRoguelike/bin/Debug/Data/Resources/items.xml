@@ -4,10 +4,10 @@
 	<item type-name="SPARC.Game.Items.EnergySource" assembly-name="Sparc.exe" id="lithium-battery" name="lithium battery" accusativ="lithium battery" plural="lithium batteries" character="!" color="Yellow" max-energy="5000" danger="1" />
 
 	<!-- Sensors -->
-	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="0" />
-	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Yellow" danger="1" />
-	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="radar" name="radar" accusativ="radar" plural="radars" character=":" color="Blue" danger="1" />
-	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensors.ProximitySensor" assembly-name="Sparc.exe" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="0" />
+	<item type-name="SPARC.Game.Items.Sensors.OpticalSensor" assembly-name="Sparc.exe" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Yellow" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensors.Radar" assembly-name="Sparc.exe" id="radar" name="radar" accusativ="radar" plural="radars" character=":" color="Blue" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensors.InfraredSensor" assembly-name="Sparc.exe" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
 
 	<!-- Missle weapons -->
 	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" range="2" danger="0" />
