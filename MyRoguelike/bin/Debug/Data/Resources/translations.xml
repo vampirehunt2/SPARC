@@ -4,5 +4,6 @@
 	<entry key="slot" value="Expansion slot" />
 	<entry key="quit?" value="Terminate mission?" />
 	<entry key="select-item" value="Select item" />
+	<entry key="execute" value="Execute?" />
 </translations>
 

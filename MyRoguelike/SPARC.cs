@@ -8,9 +8,12 @@ using VH.Engine.Game;
 using System.Windows.Forms;
 using Sparc.Game;
 
+
+// SPace Adventure Roguelike Crawler
+
 namespace VH2 {
 
-    class Program {
+    class SPARC {
 
         [STAThread]
         static void Main(string[] args) {

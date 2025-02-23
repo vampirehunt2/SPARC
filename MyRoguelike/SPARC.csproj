@@ -64,6 +64,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game\Beings\Actions\ActivateAction.cs" />
+    <Compile Include="Game\Beings\Actions\ExecuteAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcDropAction.cs" />
     <Compile Include="Game\Beings\Actions\SparcMissleAttackAction.cs" />
@@ -77,6 +78,10 @@
     <Compile Include="Game\Beings\SparcMonster.cs" />
     <Compile Include="Game\Beings\SparcPc.cs" />
     <Compile Include="Game\Items\ActivableItem.cs" />
+    <Compile Include="Game\Items\Computer.cs" />
+    <Compile Include="Game\Items\Disks\Disk.cs" />
+    <Compile Include="Game\Items\Disks\DiskOfCharging.cs" />
+    <Compile Include="Game\Items\Disks\DiskOfItemDestruction.cs" />
     <Compile Include="Game\Items\EnergySource.cs" />
     <Compile Include="Game\Items\Sensor.cs" />
     <Compile Include="Game\Items\Shield.cs" />
@@ -87,7 +92,7 @@
     <Compile Include="Game\SparcGameController.cs" />
     <Compile Include="Levels\SpaceshipMapGenerator.cs" />
     <Compile Include="Levels\SpaceshipRoom.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="SPARC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

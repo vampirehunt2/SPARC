@@ -5,14 +5,25 @@
 
 	<!-- Sensors -->
 	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="proximity-sensor" name="proximity sensor" accusativ="proximity sensor" plural="proximity sensors" character=":" color="DarkGray" danger="0" />
-	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Blue" danger="1" />
+	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="optical-sensor" name="optical sensor" accusativ="optical sensor" plural="optical sensors" character=":" color="Yellow" danger="1" />
 	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="radar" name="radar" accusativ="radar" plural="radars" character=":" color="Blue" danger="1" />
 	<item type-name="SPARC.Game.Items.Sensor" assembly-name="Sparc.exe" id="infrared-sensor" name="infrared sensor" accusativ="infrared sensor" plural="infrared sensors" character=":" color="Red" danger="1" />
 
 	<!-- Missle weapons -->
 	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="phaser" name="phaser" accusativ="phaser" plural="phasers" character="/" color="DarkGray" attack="1" defense="0" range="2" danger="0" />
 	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="laser" name="laser" accusativ="laser" plural="lasers" character="/" color="Yellow" attack="2" defense="0" range="5" danger="1"  />
-	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Red" attack="3" defense="0" range="4" danger="3" />
+	<item type-name="SPARC.Game.Items.SparcMissleWeapon" assembly-name="Sparc.exe" id="photon-cannon" name="photon cannon" accusativ="photon cannon" plural="photon cannons" character="/" color="Blue" attack="3" defense="0" range="4" danger="3" />
+
+	<!-- Computers -->
+	<item type-name="SPARC.Game.Items.Computer" assembly-name="Sparc.exe" id="calculator" name="calculator" accusativ="calculator" plural="calculators" character="}" color="DarkGray" danger="0" id-percentage="0" execute-percentage="25"/>
+	<item type-name="SPARC.Game.Items.Computer" assembly-name="Sparc.exe" id="microcomputer" name="microcomputer" accusativ="microcomputer" plural="microcomputers" character="}" color="Yellow" danger="5" id-percentage="25" execute-percentage="50"/>
+	<item type-name="SPARC.Game.Items.Computer" assembly-name="Sparc.exe" id="minicomputer" name="minicomputer" accusativ="minicomputer" plural="minicomputers" character="}" color="Blue" danger="10" id-percentage="25" execute-percentage="75"/>
+	<item type-name="SPARC.Game.Items.Computer" assembly-name="Sparc.exe" id="supercomputer" name="supercomputer" accusativ="supercomputer" plural="supercomputers" character="}" color="Red" danger="15" id-percentage="90" execute-percentage="75"/>
+
+	<!-- Disk -->
+	<item type-name="SPARC.Game.Items.Disks.DiskOfItemDestruction" assembly-name="Sparc.exe" id="disk-of-item-destruction" hidden-name="DestroyItem.exe" name="disk" accusativ="disk" plural="disks" character="?" color="White" danger="0" />
+	<item type-name="SPARC.Game.Items.Disks.DiskOfCharging" assembly-name="Sparc.exe" id="disk-of-charging" hidden-name="Charge.exe" name="disk" accusativ="disk" plural="disks" character="?" color="White" danger="0" />
+
 
 	<!-- Armor -->
 	<item type-name="SPARC.Game.Items.Shield" assembly-name="Sparc.exe" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />

@@ -46,6 +46,7 @@ namespace Sparc.Game.Beings.Ai {
             else if (command == "pick-up") action = new SparcPickupAction(pc);
             else if (command == "drop") action = new SparcDropAction(pc);
             else if (command == "activate") action = new ActivateAction(pc);
+            else if (command == "execute") action = new ExecuteAction(pc);
 
             // add other actions below
 

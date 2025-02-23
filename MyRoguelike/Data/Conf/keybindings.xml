@@ -14,6 +14,7 @@
 	<binding command="pick-up"		key=","  name="Pick up" />
 	<binding command="drop"			key="d"	 name="Drop" />
 	<binding command="activate"		key="a"	 name="Activate" />
+	<binding command="execute"		key="x"	 name="Execute" />
 	<binding command="show-help"    key="?"  name="Help" />
 	<binding command="quit"         key="Q"  name="Quit"/>
 </keybindings>

@@ -136,6 +136,8 @@ namespace Sparc.Game {
             // set up the level structure
             Level = new LevelGenerator().CreateLevelStructure();
             viewPort.Map = Map;
+
+            messageManager.ShowDirectMessage("SPace Adventure Roguelike Crawler");
         }
 
         protected override void tearDownGame() {

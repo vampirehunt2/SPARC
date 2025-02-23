@@ -15,8 +15,14 @@
 	<message key="drop" person2="% drops the %" person3="The % drops the %" person2level="info" person3level="info"/>
 	<message key="pick-up" person2="% picks up the %" person3="The % picks up the %" person2level="info" person3level="info"/>
 	<message key="activate" person2="% activates the %" person3="The % activates the %" person2level="info" person3level="info"/>
-	<message key="fail-shoot" person2="The % fails to fire the %" person3="The % fails to fire the %" person2level="warning" person3level="info"/>
-
+	<message key="fail-shoot" person2="% fails to fire the %" person3="The % fails to fire the %" person2level="warning" person3level="info"/>
+	<message key="no-computer" person2="No active computer" person3="The % stares at the %" person2level="warning" person3level="info"/>
+	<message key="fail-execute" person2="% fails to execute the %" person3="The % stares at the % with anger" person2level="warning" person3level="info"/>
+	<message key="fail-execute" person2="% charged the %" person3="The % looks more energetic" person2level="info" person3level="info"/>
+	<message key="not-a-disk" person2="Not a disk" person3="The % looks at the % with confusion" person2level="warning" person3level="info"/>
+	<message key="item-destroyed" person2="An expansion slot has become free" person3="" person2level="warn" person3level="info"/>
+	<message key="disk-destroyed" person2="The disk is destroyed" person3="" person2level="warn" person3level="info"/>
 </messages>
+
 
 

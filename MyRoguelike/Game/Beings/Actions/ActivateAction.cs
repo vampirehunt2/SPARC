@@ -16,9 +16,14 @@ using Sparc.Game.Beings;
 namespace SPARC.Game.Beings.Actions {
     public class ActivateAction: AbstractAction {
 
+        #region constructors
 
         public ActivateAction(Being performer) : base(performer) {
         }
+
+        #endregion
+
+        #region public methods
 
         public override bool Perform() {
             if (!(performer is IEquipmentBeing)) return false;
@@ -41,5 +46,7 @@ namespace SPARC.Game.Beings.Actions {
             ctrl.MessageManager.ShowMessage("activate", performer, item);
             return true;
         }
+
+        #endregion
     }
 }

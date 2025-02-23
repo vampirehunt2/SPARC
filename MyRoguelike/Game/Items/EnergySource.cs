@@ -46,7 +46,8 @@ namespace SPARC.Game.Items {
         #region public methods
         public override void Create(XmlElement prototype) {
             base.Create(prototype);
-            this.energy = Rng.Random.Next(int.Parse(prototype.Attributes["max-energy"].Value));
+            int maxEnergy = int.Parse(prototype.Attributes["max-energy"].Value);
+            this.energy = Rng.Random.Next(maxEnergy / 2) + maxEnergy / 2;
         }
 
         public override string ToString() {
