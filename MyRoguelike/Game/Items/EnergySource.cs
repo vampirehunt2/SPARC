@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using VH.Engine.Random;
+using VH.Engine.World.Beings;
 using VH.Engine.World.Items;
 
 namespace SPARC.Game.Items {
@@ -30,6 +31,11 @@ namespace SPARC.Game.Items {
         #endregion
 
         #region properties
+
+        public Being Activator {
+            get { return null; }
+            set { }
+        }
 
         public int Energy { 
             get { return energy; } 

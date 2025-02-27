@@ -18,6 +18,7 @@ namespace SPARC.Game.Items.Sensors {
         private bool active;
         protected AbstractFieldOfVision fov = null;
         protected int visionRange = 0;
+        protected Being activator;
 
         #endregion
 
@@ -29,7 +30,7 @@ namespace SPARC.Game.Items.Sensors {
 
         #region properties
 
-        public bool Active {
+        public virtual bool Active {
             get { return active; }
             set {
                 active = value;
@@ -48,6 +49,12 @@ namespace SPARC.Game.Items.Sensors {
 
         public abstract AbstractFieldOfVision FoV { get; }
 
+
+        public Being Activator {
+            get { return activator;  }
+            set { activator = value; }
+        }
+
         #endregion
 
         #region public methods
@@ -57,6 +64,11 @@ namespace SPARC.Game.Items.Sensors {
             if (Active) s += " {a}";
             return s;
         }
+
+        #endregion
+
+        #region protected methods
+
 
         #endregion
 

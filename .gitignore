@@ -10,3 +10,8 @@
 .vs/VH2/FileContentIndex/702c533a-6d0e-46ba-b2a4-84e84b347f14.vsidx
 .vs/VH2/FileContentIndex/d681ff9e-ff66-4e1b-9bcd-0fe4f6820c03.vsidx
 .vs/VH2/v17/.suo
+*.vsidx
+*.vsidx
+*.vsidx
+*.cache
+*.pdb

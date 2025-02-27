@@ -33,6 +33,11 @@ namespace SPARC.Game.Items {
 
         #region properties
 
+        public Being Activator {
+            get { return null; }
+            set { }
+        }
+
         public bool Active {
             get => active;
             set => active = value;

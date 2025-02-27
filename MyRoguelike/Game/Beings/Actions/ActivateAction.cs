@@ -34,13 +34,16 @@ namespace SPARC.Game.Beings.Actions {
             if (item == null) return false;
             if (!(item is IActivable)) return false;
             SparcGameController ctrl = (SparcGameController)GameController.Instance;
+            (item as IActivable).Activator = performer;
             (item as IActivable).Active = true;
             for (int i = 0; i < equipment.Slots.Count; ++i) {
                 if (equipment.Slots[i] != slot &&
                     equipment.Slots[i].Item != null &&
                     equipment.Slots[i].Item is IActivable &&
                     equipment.Slots[i].Item.Character == item.Character) {
-                    (equipment.Slots[i].Item as IActivable).Active = false;
+                    IActivable activable = equipment.Slots[i].Item as IActivable;
+                    activable.Activator = performer;
+                    activable.Active = false;
                 }
             }
             ctrl.MessageManager.ShowMessage("activate", performer, item);

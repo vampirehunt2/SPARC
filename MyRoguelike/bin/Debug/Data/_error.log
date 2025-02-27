@@ -1,7 +1,7 @@
-Sequence contains no elements
-   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
-   at VH.Engine.Levels.LevelGenerator.findLevel(String name) in C:\Users\P40095820\source\repos\vampirehunt2\vampirehunt\VH.Engine\Levels\LevelGenerator.cs:line 148
-   at VH.Engine.Levels.LevelGenerator.CreateLevelStructure() in C:\Users\P40095820\source\repos\vampirehunt2\vampirehunt\VH.Engine\Levels\LevelGenerator.cs:line 68
-   at Sparc.Game.SparcGameController.setUpGame() in C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\Game\SparcGameController.cs:line 117
-   at VH.Engine.Game.GameController.Play() in C:\Users\P40095820\source\repos\vampirehunt2\vampirehunt\VH.Engine\Game\GameController.cs:line 210
-   at VH2.Program.Main(String[] args) in C:\Users\P40095820\source\repos\SPARC\vampirehunt\MyRoguelike\Program.cs:line 19
+Object reference not set to an instance of an object.
+   at VH.Engine.Game.GameController.get_Map()
+   at SPARC.Game.Items.Sensors.Sensor.set_Active(Boolean value)
+   at Sparc.Game.Beings.SparcPc..ctor()
+   at Sparc.Game.SparcGameController.setUpGame()
+   at VH.Engine.Game.GameController.Play()
+   at VH2.SPARC.Main(String[] args)

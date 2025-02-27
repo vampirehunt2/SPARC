@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VH.Engine.World.Beings;
 using VH.Engine.World.Items;
 
 namespace SPARC.Game.Items {
@@ -30,6 +31,11 @@ namespace SPARC.Game.Items {
         #endregion
 
         #region properties
+
+        public Being Activator {
+            get { return null; }
+            set { }
+        }
 
         public bool Active {
             get => active;

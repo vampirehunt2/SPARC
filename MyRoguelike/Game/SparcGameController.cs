@@ -3,6 +3,7 @@ using Sparc.Game.Beings;
 using Sparc.Game.Beings.Actions;
 using Sparc.Game.Beings.Ai;
 using SPARC.Display;
+using SPARC.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -132,7 +133,7 @@ namespace Sparc.Game {
             itemGenerator = new SparcItemGenerator(new ItemFacade());
 
             // init the viewport
-            viewPort = new ViewPort(40, 0, 40, 40, console, new Position(0, 0));
+            viewPort = new SparcViewPort(40, 0, 40, 40, console, new Position(0, 0));
             viewPort.Shade = false;
 
             // set up the level structure

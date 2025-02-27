@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VH.Engine.Display;
+using VH.Engine.Game;
+using VH.Engine.Levels;
 using VH.Engine.LineOfSight;
 using VH.Engine.Random;
 
@@ -25,7 +28,20 @@ namespace SPARC.Game.Items.Sensors {
 
         #endregion
 
-        #region public methods
+        #region properties
+
+        public override bool Active {
+            get { return base.Active; }
+            set {
+                base.Active = value;
+                if (value) {
+                    if (Activator != null && Activator.Person == Person.Second) {
+                        ViewPort viewPort = GameController.Instance.ViewPort;
+                        if (viewPort != null) viewPort.Shade = false;
+                    }
+                }
+            }
+        }
 
         public override AbstractFieldOfVision FoV {
             get { 
@@ -38,5 +54,5 @@ namespace SPARC.Game.Items.Sensors {
 
         #endregion
 
-    }
+        }
 }
