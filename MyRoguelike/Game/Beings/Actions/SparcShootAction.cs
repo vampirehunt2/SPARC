@@ -57,11 +57,11 @@ namespace SPARC.Game.Beings.Actions {
             while (!hit & currentRange < (MissleWeapon as SparcMissleWeapon).Range) {
                 currentRange++;
                 pos = pos.AddStep(step);
-                missleStep();
                 if (!isShootable(pos)) {
                     notify("hit-wall");
                     break;
                 }
+                missleStep();
                 Being attackee = GameController.Instance.GetBeingAt(pos);
                 AbstractAttackAction attack;
                 if (attackee != null) {
