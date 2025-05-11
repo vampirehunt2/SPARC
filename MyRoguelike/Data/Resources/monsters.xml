@@ -2,4 +2,5 @@
 <monsters>
 	<monster type-name="SPARC.Game.Beings.SparcMonster" assembly-name="SPARC.exe" ai-type-name="SPARC.Game.Beings.Ai.HostileAi" ai-assembly-name="SPARC.exe" id="gray" name="gray" accusativ="gray" plural="grays" character="g" race="humanoid" color="DarkGray" speed="0.9" danger="0" attack="5" defense="3" health="5" tags=""/>
 	<monster type-name="SPARC.Game.Beings.LittleGreenMan" assembly-name="SPARC.exe" ai-type-name="SPARC.Game.Beings.Ai.HostileAi" ai-assembly-name="SPARC.exe" id="little-green-man" name="little green man" accusativ="little green man" plural="little green men" character="g" race="humanoid" color="Green" speed="1.2" danger="0" attack="3" defense="3" health="3" tags=""/>
+	<monster type-name="SPARC.Game.Beings.SparcMonster" assembly-name="SPARC.exe" ai-type-name="SPARC.Game.Beings.Ai.BotAi" ai-assembly-name="SPARC.exe" id="recon-bot" name="recon bot" accusativ="recon bot" plural="recon bots" character="o" race="bot" color="DarkGray" speed="2" danger="0" attack="0" defense="5" health="5" tags="bot"/>
 </monsters>

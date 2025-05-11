@@ -24,7 +24,12 @@
 	<item type-name="SPARC.Game.Items.Disks.DiskOfItemDestruction" assembly-name="Sparc.exe" id="disk-of-item-destruction" hidden-name="DestroyItem.exe" name="disk" accusativ="disk" plural="disks" character="?" color="White" danger="0" />
 	<item type-name="SPARC.Game.Items.Disks.DiskOfCharging" assembly-name="Sparc.exe" id="disk-of-charging" hidden-name="Charge.exe" name="disk" accusativ="disk" plural="disks" character="?" color="White" danger="0" />
 
-
 	<!-- Armor -->
 	<item type-name="SPARC.Game.Items.Shield" assembly-name="Sparc.exe" id="shield-generator" name="shield generator" accusativ="shield generator" plural="shield generators" character="]" color="DarkGray" danger="5" />
+
+	<!-- Links -->
+	<item type-name="SPARC.Game.Items.BotLink" assembly-name="Sparc.exe" id="bot-link" name="bot link" accusativ="bot link" plural="bot links" character="~" color="DarkGray" danger="5" />
+
 </items>
+
+

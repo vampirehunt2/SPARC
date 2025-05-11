@@ -1,10 +1,13 @@
-﻿using SPARC.Game.Items;
+﻿using SPARC.Game.Beings;
+using SPARC.Game.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using VH.Engine.Game;
+using VH.Engine.Levels;
 using VH.Engine.Translations;
 using VH.Engine.World.Beings;
 using VH.Engine.World.Items;
@@ -42,6 +45,15 @@ namespace Sparc.Game.Beings {
             (equipment.Slots[2].Item as IActivable).Active = true;
             equipment.Slots[3].Item = facade.CreateItemById("shield-generator");
             equipment.Slots[4].Item = facade.CreateItemById("optical-sensor");
+
+            // bot setup
+            MonsterFacade monsterFacade = new MonsterFacade();
+            SparcMonster bot = (SparcMonster)monsterFacade.CreateMonster("//monster[@id='recon-bot']");
+            BotLink link = (BotLink)facade.CreateItemById("bot-link");
+            link.Bot = bot;
+            equipment.Slots[5].Item = link;
+            link.Owner = this;
+            link.Active = true;
         }
 
         #endregion

@@ -3,6 +3,8 @@ using Sparc.Game.Beings;
 using Sparc.Game.Beings.Actions;
 using Sparc.Game.Beings.Ai;
 using SPARC.Display;
+using SPARC.Game.Beings;
+using SPARC.Game.Items;
 using SPARC.Levels;
 using System;
 using System.Collections.Generic;
@@ -139,6 +141,14 @@ namespace Sparc.Game {
             // set up the level structure
             Level = new LevelGenerator().CreateLevelStructure();
             viewPort.Map = Map;
+
+            // bot setup
+            BotLink link = (BotLink)((SparcEquipment)((SparcPc)pc).Equipment).GetActiveItem('~');
+            if (link != null && link.Bot != null) {
+                link.Bot.Position = new Position(pc.Position.X, pc.Position.Y);
+                Level.Monsters.Add(link.Bot);
+            }
+               
 
             messageManager.ShowDirectMessage("SPace Adventure Roguelike Crawler");
         }
